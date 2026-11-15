@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Dashboard | LibrarySpace</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            📚 Excelance<span>Library</span>
+        </div>
+
+        <div class="owner-info">
+            <div class="owner-avatar">O</div>
+            <div>
+                <h3>Library Owner</h3>
+                <p>Administrator</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="#overview" class="menu-link active">
+                <span>📊</span> Overview
+            </a>
+
+            <a href="#seats" class="menu-link">
+                <span>💺</span> Seat Management
+            </a>
+
+            <a href="#students" class="menu-link">
+                <span>👨‍🎓</span> All Students
+            </a>
+
+            <a href="#requests" class="menu-link">
+                <span>📋</span> Registration Requests
+            </a>
+
+        </nav>
+
+        <button type="button" class="logout-btn" id="logoutBtn">
+            ↪ Logout
+        </button>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h1>Owner Dashboard</h1>
+                <p>Manage your library from one place.</p>
+            </div>
+
+            <div class="topbar-profile">
+                <span>👤</span>
+                <strong>Owner</strong>
+            </div>
+
+        </header>
+
+        <!-- OVERVIEW -->
+        <section class="dashboard-section" id="overview">
+
+            <div class="welcome-section">
+                <div>
+                    <h2>Welcome Back, Owner! 👋</h2>
+                    <p>Here is your library's current overview.</p>
+                </div>
+
+                <div class="date-box" id="currentDate">
+                    Loading Date...
+                </div>
+            </div>
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">💺</div>
+                    <p>Total Seats</p>
+                    <h2 id="totalSeats">70</h2>
+                    <small>Library Capacity</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <p>Available Seats</p>
+                    <h2 id="availableSeats">--</h2>
+                    <small>Ready for booking</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon red">🔒</div>
+                    <p>Confirmed Seats</p>
+                    <h2 id="confirmedSeats">--</h2>
+                    <small>Seats allotted</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">👨‍🎓</div>
+                    <p>Total Students</p>
+                    <h2 id="totalStudents">--</h2>
+                    <small>Registered students</small>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SEAT MANAGEMENT -->
+        <section class="dashboard-section" id="seats">
+
+            <div class="section-header">
+                <div>
+                    <h2>Seat Management</h2>
+                    <p>Manage all 70 permanent library seats.</p>
+                </div>
+            </div>
+
+            <!-- SEAT LEGEND -->
+            <div class="seat-legend">
+
+                <span>
+                    <i class="available-dot"></i>
+                    Available
+                </span>
+
+                <span>
+                    <i class="pending-dot"></i>
+                    Pending
+                </span>
+
+                <span>
+                    <i class="confirmed-dot"></i>
+                    Confirmed
+                </span>
+
+            </div>
+
+            <div class="seat-grid" id="seatGrid">
+
+                <!-- Seats will load from database -->
+
+                <p class="loading-text">
+                    Loading library seats...
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- REGISTRATION REQUESTS -->
+        <section class="dashboard-section" id="requests">
+
+            <div class="section-header">
+                <div>
+                    <h2>Registration Requests</h2>
+                    <p>Review student applications and confirm seats.</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Mobile</th>
+                            <th>Course</th>
+                            <th>Requested Seat</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="requestTableBody">
+
+                        <tr>
+                            <td colspan="5" class="empty-message">
+                                Registration requests will appear here.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- ALL STUDENTS -->
+        <section class="dashboard-section" id="students">
+
+            <div class="section-header">
+                <div>
+                    <h2>All Students</h2>
+                    <p>View and manage registered library students.</p>
+                </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="search-box">
+
+                <input
+                    type="search"
+                    id="studentSearch"
+                    placeholder="Search by name, mobile or seat number..."
+                >
+
+                <button type="button" id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+            <!-- STUDENT TABLE -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Mobile Number</th>
+                            <th>Course</th>
+                            <th>Guardian</th>
+                            <th>Seat Number</th>
+                            <th>Seat Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                        <tr>
+                            <td colspan="7" class="empty-message">
+                                Student records will appear here.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+            <p>© 2026 LibrarySpace | Owner Administration Panel</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

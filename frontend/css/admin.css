@@ -1,0 +1,188 @@
+
+/* =================================
+   LIBRARY SPACE - OWNER LOGIN CSS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #101b35, #243e68);
+    min-height: 100vh;
+    color: #172033;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.login-logo {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 15px;
+    background: #eaf2ff;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+}
+
+.login-card h1 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #14213d;
+}
+
+.subtitle {
+    color: #8490a3;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.welcome {
+    margin: 32px 0 25px;
+}
+
+.welcome h2 {
+    font-size: 23px;
+    color: #172b4d;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    font-size: 13px;
+    color: #8490a3;
+}
+
+/* FORM */
+
+.form-group {
+    text-align: left;
+    margin-bottom: 21px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #34445d;
+    margin-bottom: 9px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 15px;
+    background: #f8fafd;
+    border: 1px solid #dce3ed;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    color: #172033;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #287ce9;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(40, 124, 233, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #a4afbf;
+}
+
+/* LOGIN BUTTON */
+
+#ownerLoginForm button {
+    width: 100%;
+    padding: 15px;
+    background: #287ce9;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#ownerLoginForm button:hover {
+    background: #1265d0;
+    transform: translateY(-2px);
+}
+
+#ownerLoginForm button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* MESSAGE */
+
+#loginMessage {
+    font-size: 13px;
+    margin-top: 15px;
+    color: #dc2626;
+    min-height: 18px;
+}
+
+/* BACK LINK */
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #287ce9;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #1265d0;
+}
+
+/* FOOTER */
+
+.footer-text {
+    color: #bdcce0;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+
+    .login-card {
+        padding: 32px 22px;
+    }
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+    .welcome h2 {
+        font-size: 21px;
+    }
+}
